@@ -1,0 +1,39 @@
+header{
+    margin: 0 auto;
+    background-color: black;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+img#logo{
+    height: 40px;
+    margin-left: 4rem;
+}
+
+ul#menu{
+    list-style: none;
+    text-transform: capitalize;
+    position: absolute;
+    right: 0;
+    float: right;
+    color: white;
+    margin-left: 1rem;
+    margin-right: 0px;
+}
+ul#menu a.link{
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+ul li{
+    display: inline-block;
+    padding: 10px;
+}
+ul#menu a.link:hover{
+    color: #1ed760;
+    cursor: pointer;
+}
