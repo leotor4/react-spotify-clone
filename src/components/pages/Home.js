@@ -1,4 +1,4 @@
-function Cadastro(){
+function Home(){
     return(
         <section id="Corpo">
         <div id="content">
@@ -18,4 +18,4 @@ function Cadastro(){
     );
 }
 
-export default Cadastro;
+export default Home;
