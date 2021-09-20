@@ -1,6 +1,17 @@
 import "../css/Footer.css"
+import React, { useState, useEffect } from 'react';
 
 function Footer() {
+    const [dataAtual, setDataAtual] = useState(0);
+
+    useEffect(() => {
+        let dataCorrente = new Date();
+
+        let dataFormatada = dataCorrente.getDate() + "/" + (dataCorrente.getMonth()+1) + "/" + dataCorrente.getFullYear()
+        console.log(dataFormatada)
+        document.getElementById("dataAtual").innerText = dataFormatada
+
+    });
   return (
     <div className="Footer">
          <footer>
@@ -44,6 +55,8 @@ function Footer() {
             </tr>
         </table>
     </footer>
+    <div id="dataAtual">
+    </div>
     </div>
   );
 }
