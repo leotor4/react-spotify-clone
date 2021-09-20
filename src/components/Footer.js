@@ -1,15 +1,30 @@
 import "../css/Footer.css"
 import React, { useState, useEffect } from 'react';
 
+//retorna true se o mês dado não começa com 0.
+function formataMesData(mes){
+    if(String(mes).charAt(0) != 0){
+        console.log("N tem 0 no começo")
+        return true;
+    }
+        
+    return false;
+}
+
 function Footer() {
     const [dataAtual, setDataAtual] = useState(0);
 
     useEffect(() => {
         let dataCorrente = new Date();
+        let dia = dataCorrente.getDate()
+        let mes = dataCorrente.getMonth() + 1
+        let ano = dataCorrente.getFullYear()
 
-        let dataFormatada = dataCorrente.getDate() + "/" + (dataCorrente.getMonth()+1) + "/" + dataCorrente.getFullYear()
-        console.log(dataFormatada)
-        document.getElementById("dataAtual").innerText = dataFormatada
+        let mesFormatado = formataMesData(mes) ? "0" + String(mes) : mes
+
+        let dataFormatada =  dia +  "/" + mesFormatado + "/" + ano
+        
+        document.getElementById("dataAtual").innerText = "Data atual do sistema: " + dataFormatada
 
     });
   return (
