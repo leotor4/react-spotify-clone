@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logoSpotify from "../../assets/spotify-logo.png"
 import styles from "./styles.module.scss"
 
@@ -11,8 +12,8 @@ export function Navbar() {
       </div>
 
       <div className={styles.links}>
-        <p>Premium</p>
-        <p>Faq</p>
+        <Link to="/"><p className={styles.pages}>Home</p></Link>
+        <Link to="/faq"><p className={styles.pages}>Faq</p></Link>
       </div>
     </div>
   )
