@@ -14,6 +14,7 @@ export function Navbar() {
       <div className={styles.links}>
         <Link to="/"><p className={styles.pages}>Home</p></Link>
         <Link to="/faq"><p className={styles.pages}>Faq</p></Link>
+        <Link to="/WebPlayer"><p className={styles.pages}>WebPlayer (TESTE)</p></Link>
       </div>
     </div>
   )
