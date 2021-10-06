@@ -1,14 +1,16 @@
 .container {
-  background-color: #b49bc8;
-  padding: 8vh 14vw;
-  display: flex;
-  flex-direction: row;
-
+  background-color: #c4f1ff;
+  text-align: center;
+  padding: 10vh 15vw;
+  display:ruby-base;
+  
   .message {
-    margin-right: 2rem;
+    text-align: center;
+    margin-top: 0px;
+    padding-bottom: 75px;
 
     h1 {
-      font-size: 2.4rem;
+      font-size: 3rem;
       line-height: 1.2rem;
       font-weight: 900;
     }
@@ -20,17 +22,20 @@
     }
     div {
       margin-top: 2.5rem;
-      margin-right: 6rem;
+      margin-right: 2.5rem;
       small {
         font-size: 0.75rem;
       }
     }
     button + button {
-      margin-left: 1rem;
+      margin-right: 50rem;
     }
   }
 
   img {
-    width: 400px;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 280px;
+    height: 280px;
   }
 }

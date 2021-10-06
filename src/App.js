@@ -17,7 +17,7 @@ function App() {
           <Route path="/faq" exact>
             <Faq />
           </Route>
-          <Route path = "/Webplayer" exact>
+          <Route path = "/Webplayer/:id" exact>
             <WebPlayer/>
           </Route>
         </Switch>

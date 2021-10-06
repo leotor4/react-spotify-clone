@@ -3,25 +3,28 @@ import styles from "./styles.module.scss";
 import templateAlbumCover from "../../assets/albumCovers/templatealbum.jpg";
 import Song from "../../components/Song/index";
 import playlists from '../../dados';
+import getPlaylist from '../../service/playlist';
 import { getThemeProps } from '@mui/system';
+import { useParams } from 'react-router';
 
 export function WebPlayer() {
-    const listSongs = playlists[0].musicas.map( (song) => {
-        return <li><Song nome = {song.nome} autor = {song.autor} arquivo = {song.arquivo}/></li>
-    })
+  const { id } = useParams()
+  const currentPlaylist = getPlaylist(id)
 
 
   return (
     <div className={styles.container}>     
-    <container>
-      <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" className = {styles.topImage} /> 
-      
+    <container>      
         <table className ={styles.table}>
         <tr>
-            <td><img src={templateAlbumCover} alt="" className = {styles.albumCover}/></td>
+            <td><img src={currentPlaylist.capa} alt="" className = {styles.albumCover}/></td>
             <td>
             <ul>
-                {listSongs}
+                {currentPlaylist.musicas.map((m) => {
+                  return(
+                    <li><Song nome = {m.nome} autor = {m.autor} arquivo = {m.arquivo}/></li>
+                  )
+                })}
             </ul>
 
             </td>
