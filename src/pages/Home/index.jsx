@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom'
 import styles from "./styles.module.scss"
 
 import capaFoto from "../../assets/albumCovers/templatealbum.jpg"
+import capaFoto1 from "../../assets/albumCovers/templatealbum1.jpg";
 import capaFoto2 from "../../assets/albumCovers/templatealbum2.jpg";
-// import Imgp2 from "../../assets/p2.jpg"
-// import Imgp3 from "../../assets/p3.jpg"
-// import Imgp4 from "../../assets/p4.jpg"
-// import Imgp5 from "../../assets/p5.jpg"
-// import Imgp6 from "../../assets/p6.jpg"
-// import Imgp7 from "../../assets/p7.jpg"
-// import Imgp8 from "../../assets/p8.jpg"
+import capaFoto3 from "../../assets/albumCovers/templatealbum3.jpg";
+import capaFoto4 from "../../assets/albumCovers/templatealbum4.jpg";
+import capaFoto5 from "../../assets/albumCovers/templatealbum5.jpg";
+import capaFoto6 from "../../assets/albumCovers/templatealbum6.jpg";
+import capaFoto7 from "../../assets/albumCovers/templatealbum7.jpg";
 import {MainButton} from '../../components/MainButton'
 import { SecondaryButton } from '../../components/SecondaryButton/index';
 
@@ -24,13 +23,13 @@ export function Home() {
         
       </div>
       <Link to="/WebPlayer/0"><img src={capaFoto}/></Link>
-      <Link to="/WebPlayer/1"><img src={capaFoto2}/></Link>
-      <Link to="/WebPlayer/1"><img src={capaFoto}/></Link>
-      <Link to="/WebPlayer/1"><img src={capaFoto}/></Link>
-      <Link to="/WebPlayer/1"><img src={capaFoto}/></Link>
-      <Link to="/WebPlayer/1"><img src={capaFoto}/></Link>
-      <Link to="/WebPlayer/1"><img src={capaFoto}/></Link>
-      <Link to="/WebPlayer/1"><img src={capaFoto}/></Link>
+      <Link to="/WebPlayer/1"><img src={capaFoto1}/></Link>
+      <Link to="/WebPlayer/2"><img src={capaFoto2}/></Link>
+      <Link to="/WebPlayer/3"><img src={capaFoto3}/></Link>
+      <Link to="/WebPlayer/4"><img src={capaFoto4}/></Link>
+      <Link to="/WebPlayer/5"><img src={capaFoto5}/></Link>
+      <Link to="/WebPlayer/6"><img src={capaFoto6}/></Link>
+      <Link to="/WebPlayer/7"><img src={capaFoto7}/></Link>
     </div>
   )
 }
