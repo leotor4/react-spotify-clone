@@ -19,9 +19,13 @@ import p3_m1 from "../assets/music/p3_m1.mp3";
 import p3_m2 from "../assets/music/p3_m2.mp3";
 import p3_m3 from "../assets/music/p3_m3.mp3";
 
-import file1 from "../assets/music/fil1.mp3"
-import file2 from "../assets/music/fil2.mp3"
-import file3 from "../assets/music/fil3.mp3"
+import p4_m1 from "../assets/music/p4_m1.mp3";
+import p4_m2 from "../assets/music/p4_m2.mp3";
+import p4_m3 from "../assets/music/p4_m3.mp3";
+
+import file1 from "../assets/music/fil1.mp3";
+import file2 from "../assets/music/fil2.mp3";
+import file3 from "../assets/music/fil3.mp3";
 
 const playlists = [
     {
@@ -103,21 +107,21 @@ const playlists = [
         musicas:    [
             {
                 id: 1,
-                nome: "musica 1",
-                autor: "vaetano celoso",
-                arquivo: file1
+                nome: "Smells Like Teen Spirit",
+                autor: "Nirvana",
+                arquivo: p4_m1
             },
             {
                 id: 2,
-                nome: "musica 2",
-                autor: "gilberto gil",
-                arquivo: file2
+                nome: "Californication",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m2
             },
             {
                 id: 3,
-                nome: "musica 3",
-                autor: "nilton mascimento",
-                arquivo: file3
+                nome: "Can't Stop",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m3
             }
         ]
     },{
@@ -127,21 +131,21 @@ const playlists = [
         musicas:    [
             {
                 id: 1,
-                nome: "musica 1",
-                autor: "vaetano celoso",
-                arquivo: file1
+                nome: "Smells Like Teen Spirit",
+                autor: "Nirvana",
+                arquivo: p4_m1
             },
             {
                 id: 2,
-                nome: "musica 2",
-                autor: "gilberto gil",
-                arquivo: file2
+                nome: "Californication",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m2
             },
             {
                 id: 3,
-                nome: "musica 3",
-                autor: "nilton mascimento",
-                arquivo: file3
+                nome: "Can't Stop",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m3
             }
         ]
     },{
@@ -151,21 +155,21 @@ const playlists = [
         musicas:    [
             {
                 id: 1,
-                nome: "musica 1",
-                autor: "vaetano celoso",
-                arquivo: file1
+                nome: "Smells Like Teen Spirit",
+                autor: "Nirvana",
+                arquivo: p4_m1
             },
             {
                 id: 2,
-                nome: "musica 2",
-                autor: "gilberto gil",
-                arquivo: file2
+                nome: "Californication",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m2
             },
             {
                 id: 3,
-                nome: "musica 3",
-                autor: "nilton mascimento",
-                arquivo: file3
+                nome: "Can't Stop",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m3
             }
         ]
     },{
@@ -175,21 +179,21 @@ const playlists = [
         musicas:    [
             {
                 id: 1,
-                nome: "musica 1",
-                autor: "vaetano celoso",
-                arquivo: file1
+                nome: "Smells Like Teen Spirit",
+                autor: "Nirvana",
+                arquivo: p4_m1
             },
             {
                 id: 2,
-                nome: "musica 2",
-                autor: "gilberto gil",
-                arquivo: file2
+                nome: "Californication",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m2
             },
             {
                 id: 3,
-                nome: "musica 3",
-                autor: "nilton mascimento",
-                arquivo: file3
+                nome: "Can't Stop",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m3
             }
         ]
     },{
@@ -199,21 +203,21 @@ const playlists = [
         musicas:    [
             {
                 id: 1,
-                nome: "musica 1",
-                autor: "vaetano celoso",
-                arquivo: file1
+                nome: "Smells Like Teen Spirit",
+                autor: "Nirvana",
+                arquivo: p4_m1
             },
             {
                 id: 2,
-                nome: "musica 2",
-                autor: "gilberto gil",
-                arquivo: file2
+                nome: "Californication",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m2
             },
             {
                 id: 3,
-                nome: "musica 3",
-                autor: "nilton mascimento",
-                arquivo: file3
+                nome: "Can't Stop",
+                autor: "Red Hot Chili Peppers",
+                arquivo: p4_m3
             }
         ]
     }
