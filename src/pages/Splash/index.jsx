@@ -14,25 +14,31 @@ import {MainButton} from '../../components/MainButton'
 import { SecondaryButton } from '../../components/SecondaryButton/index';
 import { UserComponent } from '../../service/users';
 
-export function Home(props) {
+export function Splash() {
   return (
     <div className={styles.container}>
       <div className={styles.message}>
-        <h1>Grandes playlists pra melhorar seu dia!</h1>
-        <p>{props.name}</p>
+        <h1>Grandes playlists pra melhorar seu dia!</h1><br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h1><Link to="/inscricao">Cadastre-se hoje!</Link></h1>
+        
+
      
 
         
         
       </div>
-      <Link  to="/WebPlayer/0"><img src={capaFoto}/></Link>
-      <Link to="/WebPlayer/1"><img src={capaFoto1}/></Link>
-      <Link to="/WebPlayer/2"><img src={capaFoto2}/></Link>
-      <Link to="/WebPlayer/3"><img src={capaFoto3}/></Link>
-      <Link to="/WebPlayer/4"><img src={capaFoto4}/></Link>
-      <Link to="/WebPlayer/5"><img src={capaFoto5}/></Link>
-      <Link to="/WebPlayer/6"><img src={capaFoto6}/></Link>
-      <Link to="/WebPlayer/7"><img src={capaFoto7}/></Link>
+      <img src={capaFoto}/>
+      <img src={capaFoto1}/>
+      <img src={capaFoto2}/>
+      <img src={capaFoto3}/>
+      <img src={capaFoto4}/>
+      <img src={capaFoto5}/>
+      <img src={capaFoto6}/>
+      <img src={capaFoto7}/>
     </div>
   )
 }
