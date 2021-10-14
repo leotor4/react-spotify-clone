@@ -31,7 +31,7 @@ export function Splash() {
         <br/>
         <br/>
         <br/>
-        <h1><Link to="/inscricao">Cadastre-se hoje!</Link></h1>
+        <h1><Link to="/inscricao" style={{color: "blue"}}>Clique aqui e comece a diversão!</Link></h1>
         
 
      
