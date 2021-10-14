@@ -13,8 +13,16 @@ import capaFoto7 from "../../assets/albumCovers/templatealbum7.jpg";
 import {MainButton} from '../../components/MainButton'
 import { SecondaryButton } from '../../components/SecondaryButton/index';
 import { UserComponent } from '../../service/users';
+import { Home } from '../Home';
 
 export function Splash() {
+  const nickname = localStorage.getItem('@db/nickname')
+
+  if(nickname !== null){
+    return(
+      <Home/>
+    )
+  }
   return (
     <div className={styles.container}>
       <div className={styles.message}>

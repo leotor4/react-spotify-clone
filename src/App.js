@@ -17,7 +17,7 @@ function App() {
             <Splash />
           </Route>
           <Route path="/home" exact>
-            <Home />
+          <Home />
           </Route>
           <Route path="/faq" exact>
             <Faq />

@@ -7,10 +7,13 @@ import { useHistory } from "react-router-dom";
 export function FormularioComponent() {
     const history = useHistory();
   
-    const handleRoute = () =>{ 
-        alert.success("Cadastro realizado com sucesso!")
+    const handleRoute = (e) =>{ 
+        e.preventDefault()
+        const name = e.target.elements.nickname.value;
+        localStorage.setItem('@db/nickname', name)
+        alert.success("Usuário cadastrado com sucesso!")
         
-      history.push("/home");
+      history.push("/");
     }
 
     const alert = useAlert()
@@ -65,7 +68,7 @@ export function FormularioComponent() {
     });
   return (
     <div className={styles.container}>
-        <form>
+        <form onSubmit={handleRoute}>
             <input type="text" minLength="3" onBlur={(e) => validateEmail(e)} id="emailInput" name="email" placeholder="E-mail" required/><br/>
             <input type="text" id="emailConfirmInput" onBlur={(e) => validateEmailConfirmation(e)} name="emailConfirm" placeholder="Confirmar e-mail" required/><br/>
             <input type="password" id="passwordInput" name="password" placeholder="Senha" required/><br/>
@@ -73,19 +76,19 @@ export function FormularioComponent() {
             <label>Data de nascimento</label><br/>
             <input type="number" id="diaInput" name="dia" min="0" max="31" placeholder="Dia" required></input>
             <select name="mes" id="mesSelect" required>
-                <option value="" disabled selected>Mês</option>
-                <option value="volvo">Janeiro</option>
-                <option value="saab">Fevereiro</option>
-                <option value="mercedes">Março</option>
-                <option value="audi">Abril</option>
-                <option value="volvo">Maio</option>
-                <option value="saab">Junho</option>
-                <option value="mercedes">Julho'</option>
-                <option value="audi">Agosto</option>
-                <option value="saab">Setembro</option>
-                <option value="mercedes">Outrubro</option>
-                <option value="audi">Novembro</option>
-                <option value="audi">Dezembro</option>
+                <option defaultValue="" disabled selected>Mês</option>
+                <option defaultValue="volvo">Janeiro</option>
+                <option defaultValue="saab">Fevereiro</option>
+                <option defaultValue="mercedes">Março</option>
+                <option defaultValue="audi">Abril</option>
+                <option defaultValue="volvo">Maio</option>
+                <option defaultValue="saab">Junho</option>
+                <option defaultValue="mercedes">Julho'</option>
+                <option defaultValue="audi">Agosto</option>
+                <option defaultValue="saab">Setembro</option>
+                <option defaultValue="mercedes">Outrubro</option>
+                <option defaultValue="audi">Novembro</option>
+                <option defaultValue="audi">Dezembro</option>
             </select>
             <input type="number" id="anoInput" name="ano" min="0" max={anoAtual} placeholder="Ano" required></input><br/>
             <input type="radio" id="mascGeneroInput" name="genero" value="Masculino"></input>
@@ -94,7 +97,7 @@ export function FormularioComponent() {
             <label for="age1">Feminino</label>
             <input type="radio" id="binGeneroInput" name="genero" value="Nao binario"></input>
             <label for="age1">Não binario</label><br/>
-            <input disabled={!isFormValid} onClick={(e) => handleRoute()} type="submit" id="emailInput" value="Inscrever-se" />
+            <button disabled={!isFormValid} type="submit" id="emailInput" >Inscrever-se</button>
         </form>
     </div>
   );

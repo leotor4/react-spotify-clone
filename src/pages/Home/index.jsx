@@ -15,11 +15,16 @@ import { SecondaryButton } from '../../components/SecondaryButton/index';
 import { UserComponent } from '../../service/users';
 
 export function Home(props) {
+  const nickname = localStorage.getItem('@db/nickname')
+  
   return (
     <div className={styles.container}>
       <div className={styles.message}>
         <h1>Grandes playlists pra melhorar seu dia!</h1>
-        <p>{props.name}</p>
+        <br/>
+        <br/>
+        <br/>
+        <h1>Bem vindo(a) {nickname}!</h1>
      
 
         
