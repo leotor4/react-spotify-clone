@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from "./styles.module.scss";
-import templateAlbumCover from "../../assets/albumCovers/templatealbum.jpg";
+import templateAlbumCover from "../../assets/albumCovers/templatealbum0.jpg";
 import Song from "../../components/Song/index";
-import playlists from '../../dados';
 import getPlaylist from '../../service/playlist';
 import { getThemeProps } from '@mui/system';
 import { useParams } from 'react-router';
