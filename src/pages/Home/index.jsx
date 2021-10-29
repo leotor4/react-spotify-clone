@@ -30,7 +30,7 @@ export function Home(props) {
         
         
       </div>
-      <Link  to="/WebPlayer/0"><img src={capaFoto}/></Link>
+      <Link to="/WebPlayer/0"><img src={capaFoto}/></Link>
       <Link to="/WebPlayer/1"><img src={capaFoto1}/></Link>
       <Link to="/WebPlayer/2"><img src={capaFoto2}/></Link>
       <Link to="/WebPlayer/3"><img src={capaFoto3}/></Link>
