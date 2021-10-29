@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from "./styles.module.scss"
 
-import capaFoto from "../../assets/albumCovers/templatealbum.jpg"
+import capaFoto from "../../assets/albumCovers/templatealbum0.jpg"
 import capaFoto1 from "../../assets/albumCovers/templatealbum1.jpg";
 import capaFoto2 from "../../assets/albumCovers/templatealbum2.jpg";
 import capaFoto3 from "../../assets/albumCovers/templatealbum3.jpg";
@@ -31,7 +31,7 @@ export function Splash() {
         <br/>
         <br/>
         <br/>
-        <h1><Link to="/inscricao">Cadastre-se hoje!</Link></h1>
+        <h1><Link to="/inscricao" style={{color: "blue"}}>Clique aqui e comece a diversão!</Link></h1>
         
 
      

@@ -1,4 +1,4 @@
-import capaFoto from "../assets/albumCovers/templatealbum.jpg";
+import capaFoto from "../assets/albumCovers/templatealbum0.jpg";
 import capaFoto1 from "../assets/albumCovers/templatealbum1.jpg";
 import capaFoto2 from "../assets/albumCovers/templatealbum2.jpg";
 import capaFoto3 from "../assets/albumCovers/templatealbum3.jpg";
@@ -222,6 +222,7 @@ const playlists = [
         ]
     }
 ]
+const totalPlaylists = playlists.length;
 
 const getPlaylist = (id) => {
     if(id > (playlists.length-1) || id < 0){
@@ -234,3 +235,4 @@ const getPlaylist = (id) => {
 
 
 export default getPlaylist;
+export {totalPlaylists};
