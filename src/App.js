@@ -6,6 +6,7 @@ import { Formulario } from "./pages/Form";
 import { Home } from "./pages/Home";
 import { Splash } from "./pages/Splash";
 import { WebPlayer } from "./pages/WebPlayer";
+import {Login} from "./pages/Login";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Navbar />
         <Switch>
         <Route path="/" exact>
-            <Splash />
+            {/*<Splash />*/}
+            <Login />
           </Route>
           <Route path="/home" exact>
           <Home />
