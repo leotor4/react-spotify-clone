@@ -69,9 +69,9 @@ export function Footer() {
                 <td></td>
             </tr>
         </table>
+        <div id="dataAtual"></div>
     </footer>
-    <div id="dataAtual">
-    </div>
+
     </div>
   );
 }
