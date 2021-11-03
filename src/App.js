@@ -15,8 +15,8 @@ function App() {
         <Navbar />
         <Switch>
         <Route path="/" exact>
-            {/*<Splash />*/}
-            <Login />
+            {/* {<Login />} */}
+            <Home />
           </Route>
           <Route path="/home" exact>
           <Home />

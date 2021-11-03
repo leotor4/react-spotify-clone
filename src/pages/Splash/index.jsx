@@ -26,7 +26,7 @@ export function Splash() {
   return (
     <div className={styles.container}>
       <div className={styles.message}>
-        <h1>Grandes playlists pra melhorar seu dia!</h1><br/>
+        <h1>Grandes playlists pra melhorar seu dia1</h1><br/>
         <br/>
         <br/>
         <br/>
