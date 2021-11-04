@@ -57,9 +57,23 @@ const getPlaylistById = async (playlistId) => {
 }
 
 //array of songs (songId, songName, author, songPath)
-const updateSongs = async (playlistId, songs) => {
+const updateSongs = async (playlistId, songsArray) => {
     try{
-        const response = await axios.put(`http://localhost:4000/plays/${playlistId}`, songs)
+        const playlistData = await getPlaylistById(playlistId)
+
+        const requestBody = {
+            id: playlistId,
+            name: playlistData.name,
+            userId: playlistData.userId,
+            capa: playlistData.capa,
+            songs: songsArray
+        }
+
+        const response = await axios.put(`http://localhost:4000/plays/${playlistId}`,requestBody,{
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          } )
         return response
     }catch(err){
         console.error(err)

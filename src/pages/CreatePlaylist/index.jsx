@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import getPlaylist from '../../service/playlist';
 import { getAllAlbums } from "../../service/song";
 import { getThemeProps, width } from '@mui/system';
@@ -23,12 +23,20 @@ export function CreatePlaylist() {
     const [addedSongs, setAddedSongs] = useState([]);
     const [currentSong, setCurrentSong] = useState("");
     const [playlistName, setPlaylistName] = useState("")
+    const [user, setUser] = useState("")
+    const history = useHistory()
 
     const handleChange = event => {
       console.log("Onchange")
       setMusicaBuscada(event.target.value);
     };
     useEffect(async () => {
+      let userLocalStorage = localStorage.getItem('@db/nickname') 
+      if(userLocalStorage == null ){
+        history.push('/')
+      }else{
+        setUser(JSON.parse(userLocalStorage))
+      }
       console.log("ON useEffect")
         setSongs(await getSongsByName(musicaBuscada))
         console.log(songs)
@@ -74,7 +82,7 @@ export function CreatePlaylist() {
       console.log("BEFORE: " + JSON.stringify(songs))
       console.log("AFTER: " +  playlistSongs)
 
-      let userId = await findUserIdByNickname(nickname)
+      let userId = user.id
       createPlaylist(playlistName, userId, playlistSongs)
 
       

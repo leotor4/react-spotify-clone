@@ -2,31 +2,20 @@
   "users": [
     {
       "id": 1,
-      "nickname": "Rafael",
-      "email": "rr",
+      "nickname": "tester1",
+      "email": "teste1@email.com",
       "password": "123456"
     },
     {
-      "nickname": "Pedro Alterado",
-      "email": "p@p.com",
-      "password": "123456",
+      "nickname": "leleo",
+      "email": "leo@gmail.com",
+      "password": "123",
       "id": 2
-    },
-    {
-      "nickname": "",
-      "email": "",
-      "password": "",
-      "id": 3
-    },
-    {
-      "nickname": "joao",
-      "email": "j@j.com",
-      "password": "123456",
-      "id": 4
     }
   ],
   "plays": [
     {
+      "id": 1,
       "name": "Playlist Carnaval 2022",
       "userId": 1,
       "capa": "albumCovers/templatealbum0.jpg",
@@ -36,7 +25,15 @@
           "nome": "SICKO MODE",
           "autor": "Travis Scott ft. Drake",
           "arquivo": "../../assets/music/p1_m1.mp3"
-        },
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "TESTE",
+      "userId": 1,
+      "capa": "albumCovers/templatealbum0.jpg",
+      "songs": [
         {
           "id": 2,
           "nome": "Goosebumps",
@@ -48,20 +45,6 @@
           "nome": "HIGHEST IN THE ROOM",
           "autor": "Travis Scott",
           "arquivo": "../assets/music/p1_m3.mp3"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "name": "Ypioca",
-      "userId": 1,
-      "capa": "albumCovers/templatealbum1.jpg",
-      "songs": [
-        {
-          "id": 4,
-          "nome": "Riptide",
-          "autor": "Vance Joy",
-          "arquivo": "../assets/music/p2_m1.mp3"
         },
         {
           "id": 5,
@@ -70,13 +53,18 @@
           "arquivo": "../assets/music/p2_m2.mp3"
         },
         {
-          "id": 6,
-          "nome": "Void",
-          "autor": "The Neighbourhood",
-          "arquivo": "../assets/music/p2_m3.mp3"
+          "id": 8,
+          "nome": "Life Goes On",
+          "autor": "Oliver Tree",
+          "arquivo": "../assets/music/p3_m2.mp3"
+        },
+        {
+          "id": 10,
+          "nome": "Smells Like Teen Spirit",
+          "autor": "Nirvana",
+          "arquivo": "../assets/music/p4_m1.mp3"
         }
-      ],
-      "id": 2
+      ]
     },
     {
       "name": "TESTE",
@@ -91,6 +79,46 @@
         }
       ],
       "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Jericoacoara",
+      "userId": 2,
+      "capa": "albumCovers/templatealbum0.jpg",
+      "songs": [
+        {
+          "id": 4,
+          "nome": "Riptide",
+          "autor": "Vance Joy",
+          "arquivo": "../assets/music/p2_m1.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Férias",
+      "capa": "albumCovers/templatealbum0.jpg",
+      "userId": 2,
+      "songs": [
+        {
+          "id": 3,
+          "nome": "HIGHEST IN THE ROOM",
+          "autor": "Travis Scott",
+          "arquivo": "../assets/music/p1_m3.mp3"
+        },
+        {
+          "id": 7,
+          "nome": "Teen Romance",
+          "autor": "Lil Peep",
+          "arquivo": "../assets/music/p3_m1.mp3"
+        },
+        {
+          "id": 10,
+          "nome": "Smells Like Teen Spirit",
+          "autor": "Nirvana",
+          "arquivo": "../assets/music/p4_m1.mp3"
+        }
+      ],
+      "id": 5
     }
   ],
   "songs": [
@@ -126,7 +154,7 @@
     },
     {
       "id": 6,
-      "nome": "Void",
+      "nome": "Hey baby",
       "autor": "The Neighbourhood",
       "arquivo": "../assets/music/p2_m3.mp3"
     },
