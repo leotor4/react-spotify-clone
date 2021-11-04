@@ -12,7 +12,7 @@
     {
         "id": 1,
         "nome": "test1",
-        "capa": "albumCovers/templatealbum0.jpg",
+        "capa": "/src/assets/albumCovers/templatealbum0.jpg",
         "musicas":    [
             {
                 "id": 1,

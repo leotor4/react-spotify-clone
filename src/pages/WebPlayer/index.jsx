@@ -12,27 +12,28 @@ export function WebPlayer() {
   const currentPlaylist = getPlaylist(id-1)
 
   const [playlist, setPlaylist] = useState([]);
-  const [capa, setCapa] = useState([]);
+  const [capa, setCapa] = useState();
  
-  useEffect( () => {
-    axios.get(`http://localhost:4000/playlists/${id}`)
-     .then( 
-       (res) => setPlaylist(res.data.musicas) );
+  useEffect(async() => {
+    async function getData() {
+      const result = await axios.get(`http://localhost:4000/playlists/${id}`);
+      const { capa, musicas } = result.data;
+      console.log(result)
+      // console.log(capa)
+      setCapa(capa);
+      setPlaylist(musicas);
+    }
+
+    await getData();
   },   [] )
 
-  useEffect( () => {
-    axios.get(`http://localhost:4000/playlists/${id}`)
-     .then( 
-       (res) => setCapa(res.data.capa) );
-  },   [] )
 
 
-  const res1 = playlist.map( (song) =>{
+  const res1 = playlist.map( (song, index) =>{
     return(
-      <li> <Song nome = {song.nome} autor = {song.autor} arquivo = {song.arquivo}/> </li>
+      <li> <Song key={index} nome={song.nome} autor={song.autor} arquivo={song.arquivo}/> </li>
     )
   }  )
-
 
 
   return (
@@ -40,7 +41,7 @@ export function WebPlayer() {
     <container>      
         <table className ={styles.table}>
         <tr>
-            <td><img src={currentPlaylist.capa} alt="" className = {styles.albumCover}/></td>
+            <td>{(capa) && (<img src={`${capa}`} alt="" className={styles.albumCover}/>)}</td>
             <td>
             <ul>
                 {res1}
