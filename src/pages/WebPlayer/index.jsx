@@ -68,14 +68,14 @@ export function WebPlayer() {
         let userSongs = [...songs]
         for(let i=0; i< allSongs.length ;i++){
           if(allSongs[i].nome == currentSong){
-            // userSongs.push(allSongs[i])
+            userSongs.push(allSongs[i])
             setSongs([...songs, allSongs[i]]);
           }
         }
         setAddedSongs(userSongs);
-         // updateSongs(id, userSongs).then(resp => {
-         //   console.log("Playlist atualizada")
-         // })
+         updateSongs(id, userSongs).then(resp => {
+           console.log("Playlist atualizada")
+         })
       }
     }else if(value == 'REMOVER'){
       let userSongs = songs

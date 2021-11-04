@@ -83,6 +83,24 @@
           "nome": "SICKO MODE",
           "autor": "Travis Scott ft. Drake",
           "arquivo": "../../assets/music/p1_m1.mp3"
+        },
+        {
+          "id": 5,
+          "nome": "Sweater Weather",
+          "autor": "The Neighbourhood",
+          "arquivo": "../assets/music/p2_m2.mp3"
+        },
+        {
+          "id": 10,
+          "nome": "Smells Like Teen Spirit",
+          "autor": "Nirvana",
+          "arquivo": "../assets/music/p4_m1.mp3"
+        },
+        {
+          "id": 9,
+          "nome": "STAY",
+          "autor": "Kid LAROI, Justin Bieber",
+          "arquivo": "../assets/music/p3_m3.mp3"
         }
       ]
     },
