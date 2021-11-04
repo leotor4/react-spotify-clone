@@ -7,6 +7,7 @@ import { Home } from "./pages/Home";
 import { Splash } from "./pages/Splash";
 import { WebPlayer } from "./pages/WebPlayer";
 import {Login} from "./pages/Login";
+import { CreatePlaylist } from "./pages/CreatePlaylist";
 
 function App() {
   return (
@@ -16,20 +17,22 @@ function App() {
         <Switch>
         <Route path="/" exact>
             <Login />
-            
-          </Route>
-          <Route path="/home" exact>
+        </Route>
+        <Route path="/user-playlists/:id" exact>
+          <CreatePlaylist />
+        </Route>
+        <Route path="/home" exact>
           <Home />
-          </Route>
-          <Route path="/faq" exact>
-            <Faq />
-          </Route>
-          <Route path = "/Webplayer/:id" exact>
-            <WebPlayer/>
-          </Route>
-          <Route path = "/inscricao" exact>
-            <Formulario/>
-          </Route>
+        </Route>
+        <Route path="/faq" exact>
+          <Faq />
+        </Route>
+        <Route path = "/Webplayer/:id" exact>
+          <WebPlayer/>
+        </Route>
+        <Route path = "/inscricao" exact>
+          <Formulario/>
+        </Route>
         </Switch>
         <Footer />
       </div>

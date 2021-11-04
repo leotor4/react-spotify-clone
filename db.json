@@ -9,39 +9,70 @@
   ],
   "plays": [
     {
+      "name": "Playlist Carnaval 2022",
+      "userId": 1,
+      "capa": "albumCovers/templatealbum0.jpg",
       "songs": [
         {
           "id": 1,
-          "name": "Hello world"
+          "nome": "SICKO MODE",
+          "autor": "Travis Scott ft. Drake",
+          "arquivo": "../../assets/music/p1_m1.mp3"
+        },
+        {
+          "id": 2,
+          "nome": "Goosebumps",
+          "autor": "Travis Scott ft. Kendrick Lamar",
+          "arquivo": "../assets/music/p1_m2.mp3"
+        },
+        {
+          "id": 3,
+          "nome": "HIGHEST IN THE ROOM",
+          "autor": "Travis Scott",
+          "arquivo": "../assets/music/p1_m3.mp3"
         }
       ],
       "id": 1
     },
     {
-      "name": "Playlist craida",
+      "name": "Ypioca",
       "userId": 1,
-      "songs": [],
+      "capa": "albumCovers/templatealbum1.jpg",
+      "songs": [
+        {
+          "id": 4,
+          "nome": "Riptide",
+          "autor": "Vance Joy",
+          "arquivo": "../assets/music/p2_m1.mp3"
+        },
+        {
+          "id": 5,
+          "nome": "Sweater Weather",
+          "autor": "The Neighbourhood",
+          "arquivo": "../assets/music/p2_m2.mp3"
+        },
+        {
+          "id": 6,
+          "nome": "Void",
+          "autor": "The Neighbourhood",
+          "arquivo": "../assets/music/p2_m3.mp3"
+        }
+      ],
       "id": 2
     },
     {
-      "name": "Playlist numero 3",
+      "name": "TESTE",
+      "capa": "albumCovers/templatealbum0.jpg",
       "userId": 1,
       "songs": [
         {
-          "id": 1,
-          "name": "tarara"
+          "id": 2,
+          "nome": "Goosebumps",
+          "autor": "Travis Scott ft. Kendrick Lamar",
+          "arquivo": "../assets/music/p1_m2.mp3"
         }
       ],
       "id": 3
-    },
-    {
-      "0": {
-        "id": 1,
-        "nome": "SICKO MODE",
-        "autor": "XANAX",
-        "arquivo": "../../assets/music/p1_m1.mp3"
-      },
-      "id": 4
     }
   ],
   "songs": [

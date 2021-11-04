@@ -36,12 +36,23 @@ const createPlaylist = async (playlistName, userId, songs) => {
     try{
         const response = await axios.post('http://localhost:4000/plays', {
             name: playlistName,
+            capa: "albumCovers/templatealbum0.jpg",
             userId: userId,
             songs: songs
         })
         return response
     }catch(err){
         console.error(err)
+    }
+}
+
+const getPlaylistById = async (playlistId) => {
+    try{
+        const playlist = await axios.get(`http://localhost:4000/plays?id=${playlistId}&b=l`)
+        let jaja =  await playlist.data[0]
+        return jaja
+    }catch(error){
+        console.log("Erro ao buscar playlist por id")
     }
 }
 
@@ -264,4 +275,4 @@ const getPlaylist = (id) => {
 
 
 export default getPlaylist;
-export { totalPlaylists, createPlaylist, updateSongs };
+export { totalPlaylists, createPlaylist, updateSongs, getPlaylistById };

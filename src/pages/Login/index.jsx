@@ -24,31 +24,6 @@ export function Login() {
         localStorage.removeItem('@spotify');
     }
 
-    async function getSongs(){
-        console.log(await getAllSongs())
-    }
-
-    async function newPlaylist(){
-        console.log(await createPlaylist("Playlist numero 3",
-        1,
-        [{
-            id: 1,
-            name: "tarara"
-        }]   
-        ))
-    }
-
-    const putMusic = async () => {
-        const songs = [
-            {
-                id: 1,
-                nome: "SICKO MODE",
-                autor: "XANAX",
-                arquivo: "../../assets/music/p1_m1.mp3"
-            }
-        ]
-        const response = await updateSongs(4, songs)
-    }
 
     return (
         <div className={styles.container} >
@@ -71,7 +46,7 @@ export function Login() {
                 </section>
             </form>
 
-            <button onClick={putMusic} >Fazer login</button>
+            <button onClick={handleLogin} >Fazer login</button>
         </div>
     );
 }
