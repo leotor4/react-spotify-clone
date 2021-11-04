@@ -8,6 +8,8 @@ import { Splash } from "./pages/Splash";
 import { WebPlayer } from "./pages/WebPlayer";
 import {Login} from "./pages/Login";
 import { CreatePlaylist } from "./pages/CreatePlaylist";
+import { Cadastro } from "./pages/Cadastro";
+import { AtualizarCadastro } from "./pages/AtualizarCadastro";
 
 function App() {
   return (
@@ -30,8 +32,11 @@ function App() {
         <Route path = "/Webplayer/:id" exact>
           <WebPlayer/>
         </Route>
-        <Route path = "/inscricao" exact>
-          <Formulario/>
+        <Route path = "/Cadastro" exact>
+          <Cadastro/>
+        </Route>
+        <Route path = "/atualizarCadastro" exact>
+          <AtualizarCadastro/>
         </Route>
         </Switch>
         <Footer />

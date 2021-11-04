@@ -2,9 +2,27 @@
   "users": [
     {
       "id": 1,
-      "nickname": "tester1",
-      "email": "teste1@email.com",
+      "nickname": "Rafael",
+      "email": "rr",
       "password": "123456"
+    },
+    {
+      "nickname": "Pedro Alterado",
+      "email": "p@p.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "nickname": "",
+      "email": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "nickname": "joao",
+      "email": "j@j.com",
+      "password": "123456",
+      "id": 4
     }
   ],
   "plays": [

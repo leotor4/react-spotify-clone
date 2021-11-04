@@ -5,12 +5,12 @@ import axios from 'axios';
 import { getUserPlaylistsByNickname } from "../../service/users";
 
 export function Home(props) {
-  const nickname = localStorage.getItem('@db/nickname')
+  const user = JSON.parse(localStorage.getItem('@db/nickname')) //Mudei para json parse 
 
   const [totalAlbums, setTotalAlbums] = useState([]);
 
   useEffect(async () => {
-    setTotalAlbums(await getUserPlaylistsByNickname(nickname))
+    setTotalAlbums(await getUserPlaylistsByNickname(user.nickname))
   },[] )
 
   const res = totalAlbums.map( (totalAlbums) =>{
@@ -28,14 +28,14 @@ export function Home(props) {
         <br/>
         <br/>
         <br/>
-        <h1>Bem vindo(a) {nickname}!</h1>
+        <h1>Bem vindo(a) {user.nickname}!</h1>
  
 
       {/*lista de playlists*/} 
       </div>
       {res}
       <div>
-      <Link  to = { `/user-playlists/${nickname}` } > 
+      <Link  to = { `/user-playlists/${user.nickname}` } > 
         <img src= 'adiciona_playlist.png' />
       </Link>
       </div>

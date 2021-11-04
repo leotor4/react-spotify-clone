@@ -27,5 +27,14 @@ const findUserIdByNickname = async (nickname) => {
     }
 }
 
+const findUserByNickname = async (nickname) => {
+    try{
+        const users = await axios.get(`http://localhost:4000/users?nickname=${nickname}`)
+        return users.data[0]
+    }catch(error){
+        console.error("Erro ao requirir os usuários")
+    }
+}
+
 
 export { getUserPlaylistsById, getUserPlaylistsByNickname, findUserIdByNickname }
