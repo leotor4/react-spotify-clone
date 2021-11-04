@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 
 import styles from './styles.module.scss';
 import api from "../../services/api";
+import { getAllSongs } from '../../service/song';
+import { createPlaylist, updateSongs } from '../../service/playlist'
 
 export function Login() {
     const [email, setEmail] = useState('');
@@ -20,6 +22,32 @@ export function Login() {
     // função de logout para implementar
     async function logout() {
         localStorage.removeItem('@spotify');
+    }
+
+    async function getSongs(){
+        console.log(await getAllSongs())
+    }
+
+    async function newPlaylist(){
+        console.log(await createPlaylist("Playlist numero 3",
+        1,
+        [{
+            id: 1,
+            name: "tarara"
+        }]   
+        ))
+    }
+
+    const putMusic = async () => {
+        const songs = [
+            {
+                id: 1,
+                nome: "SICKO MODE",
+                autor: "XANAX",
+                arquivo: "../../assets/music/p1_m1.mp3"
+            }
+        ]
+        const response = await updateSongs(4, songs)
     }
 
     return (
@@ -43,7 +71,7 @@ export function Login() {
                 </section>
             </form>
 
-            <button onClick={handleLogin} >Fazer login</button>
+            <button onClick={putMusic} >Fazer login</button>
         </div>
     );
 }

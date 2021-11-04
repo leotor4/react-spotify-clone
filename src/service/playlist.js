@@ -27,6 +27,33 @@ import file1 from "../assets/music/fil1.mp3";
 import file2 from "../assets/music/fil2.mp3";
 import file3 from "../assets/music/fil3.mp3";
 
+const axios = require('axios');
+
+//playlistName - string
+//userId - number
+//songs - array of songs
+const createPlaylist = async (playlistName, userId, songs) => {
+    try{
+        const response = await axios.post('http://localhost:4000/plays', {
+            name: playlistName,
+            userId: userId,
+            songs: songs
+        })
+        return response
+    }catch(err){
+        console.error(err)
+    }
+}
+
+//array of songs (songId, songName, author, songPath)
+const updateSongs = async (playlistId, songs) => {
+    try{
+        const response = await axios.put(`http://localhost:4000/plays/${playlistId}`, songs)
+        return response
+    }catch(err){
+        console.error(err)
+    }
+}
 
 
 const playlists = [
@@ -237,4 +264,4 @@ const getPlaylist = (id) => {
 
 
 export default getPlaylist;
-export {totalPlaylists};
+export { totalPlaylists, createPlaylist, updateSongs };

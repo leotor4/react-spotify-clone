@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { User } from '../model/user.model'
+const axios = require('axios');
 
-export function UserComponent(props) {
-    
-    const [user, setUser] = useState("")
-
-    return(
-        <div>
-            <h1>Hey {props.name}</h1>
-        </div>
-    )
-
+const getUserPlaylists = async (userId) => {
+    try{
+        const playlists = await axios.get(`http://localhost:4000/users/${userId}?_embed=plays`)
+        return playlists
+    }catch(error){
+        console.error("Erro ao requirir todas as músicas.")
+    }
 }
+
+export { getUserPlaylists }
