@@ -65,16 +65,17 @@ export function WebPlayer() {
     }else if(value == 'ADICIONAR'){
       if(!songs.includes(currentSong)){
         console.log("Adicionando Música")
-        let userSongs = songs
-        for(let i=0; i<allSongs.length;i++){
+        let userSongs = [...songs]
+        for(let i=0; i< allSongs.length ;i++){
           if(allSongs[i].nome == currentSong){
-            userSongs.push(allSongs[i])
+            // userSongs.push(allSongs[i])
+            setSongs([...songs, allSongs[i]]);
           }
         }
-        setAddedSongs(userSongs)
-         updateSongs(id, userSongs).then(resp => {
-           console.log("Playlist atualizada")
-         })
+        setAddedSongs(userSongs);
+         // updateSongs(id, userSongs).then(resp => {
+         //   console.log("Playlist atualizada")
+         // })
       }
     }else if(value == 'REMOVER'){
       let userSongs = songs
@@ -111,46 +112,76 @@ export function WebPlayer() {
 
 
   return (
-    <div className={styles.container}> 
-    <div>
-      <h1>Playlist {playlist.name}</h1> 
-      <br/>
-    </div>
-      <br/>
-      <div>
-        <input  placeholder="Digite sua música favorita" type="text" 
-              value={musicaBuscada} onChange={handleChange}
-            />
-          <br/>
-          <div id="resultadoPesquisa">
+    // <div className={styles.container}>
+    // <div>
+    //   <h1>Playlist {playlist.name}</h1>
+    // </div>
+    //   <div>
+    //     <input  placeholder="Digite sua música favorita" type="text"
+    //           value={musicaBuscada} onChange={handleChange}
+    //         />
+    //
+    //       <div id="resultadoPesquisa">
+    //       <ul>
+    //         {searchResults.map(item => (
+    //           <li style={{margin: 0}} onClick={handleAddSong}>
+    //             <AlertDialog addedSongs={addedSongs} contentStyle={{ margin: 0, padding: 0 }} song={item}/>
+    //           </li>
+    //         ))}
+    //       </ul>
+    //       </div>
+    //   </div>
+    //     <table className ={styles.table}>
+    //     <tr>
+    //         <td>
+    //         <ul>
+    //         {songs.map((song) => {
+    //           return(
+    //             <li>
+    //               <Song key={song.id} nome={song.nome} autor={song.autor} arquivo={song.arquivo}/>
+    //               <button value={song.nome} onClick={handleRemoveMusic}>Remover música</button>
+    //             </li>
+    //           )
+    //         })}
+    //         </ul>
+    //         </td>
+    //     </tr>
+    //
+    //     </table>
+    // </div>
+      <div className={styles.container}>
+        <h1 className={styles.playlistTitle} >Playlist {playlist.name}</h1>
+
+        <input
+            className={styles.input}
+            placeholder="Digite sua música favorita" type="text"
+            value={musicaBuscada} onChange={handleChange}
+        />
+        <div className={styles.searchResult} id="resultadoPesquisa">
           <ul>
             {searchResults.map(item => (
-              <li style={{margin: 0}} onClick={handleAddSong}>
-                <AlertDialog addedSongs={addedSongs} contentStyle={{ margin: 0, padding: 0 }} song={item}/>
-              </li>
-              
+                <li style={{margin: 0}} onClick={handleAddSong}>
+                  <AlertDialog addedSongs={addedSongs} contentStyle={{ margin: 0, padding: 0 }} song={item}/>
+                </li>
             ))}
           </ul>
-          </div>
-      </div>     
-        <table className ={styles.table}>
-        <tr>
-           
-            <td>
-            <ul>
-            {songs.map((song) => {
-              return(
-                <li>
+        </div>
+
+        <section className={styles.songs}>
+          <div className={styles.background}>
+          {songs.map((song, index) => {
+            return (
+                <>
+                <div className={styles.single} key={index} >
                   <Song key={song.id} nome={song.nome} autor={song.autor} arquivo={song.arquivo}/>
                   <button value={song.nome} onClick={handleRemoveMusic}>Remover música</button>
-                </li>
-              )
-            })}
-            </ul>
-            </td>  
-        </tr>
-
-        </table>
-    </div>
+                </div>
+                <hr />
+                </>
+            )
+          })}
+          </div>
+        </section>
+      </div>
   )
 }

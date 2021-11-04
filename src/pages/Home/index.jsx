@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import styles from "./styles.module.scss"
 import axios from 'axios';
 import { getUserPlaylistsByNickname } from "../../service/users";
 
 export function Home(props) {
-  const user = JSON.parse(localStorage.getItem('@db/nickname')) //Mudei para json parse 
-
+  // const [user, setUser] = useState(JSON.parse(localStorage.getItem('@db/nickname')));
   const [totalAlbums, setTotalAlbums] = useState([]);
+  const history = useHistory();
+
+  const user = "";
 
   useEffect(async () => {
+    const user = JSON.parse(localStorage.getItem('@db/nickname'))
+
+    if (user == null) {
+        history.push("/");
+        return;
+    }
+
     setTotalAlbums(await getUserPlaylistsByNickname(user.nickname))
   },[] )
 
@@ -28,7 +37,7 @@ export function Home(props) {
         <br/>
         <br/>
         <br/>
-        <h1>Bem vindo(a) {user.nickname}!</h1>
+        <h1>Bem vindo(a) {user.nickname}</h1>
  
 
       {/*lista de playlists*/} 

@@ -18,9 +18,33 @@
     }
   }
 
+  .submitBtn {
+    display: flex;
+    justify-content: center;
+  }
+
   button {
     padding: 20px;
     width: 10%;
     align-self: center;
+
+    border-radius: 8px;
+    border: none;
+
+    cursor: pointer;
+
+    transition: 200ms filter;
+
+    &:first-child {
+      background-color: #18D860;
+    }
+
+    & + button {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 }

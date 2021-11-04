@@ -17,6 +17,10 @@ export function AtualizarCadastro() {
     async function handleCadastro(e) {
         e.preventDefault();
 
+        if (!nickname) return;
+        if (!email) return;
+        if (!password) return;
+
         const newUser = {
             nickname: nickname,
             email: email,
@@ -31,9 +35,17 @@ export function AtualizarCadastro() {
             })
     }
 
+    function handleLogout(e) {
+        e.preventDefault();
+        localStorage.clear();
+        history.push("/")
+    }
+
     const user = JSON.parse(localStorage.getItem('@db/nickname'))
 
     useEffect(() => {
+        if (!user) history.push("/");
+
         setNickname(user.nickname)
         setEmail(user.email)
         setPassword(user.password)
@@ -75,7 +87,10 @@ export function AtualizarCadastro() {
                 </section>
             </form>
 
-            <button onClick={handleCadastro} >Cadastrar</button>
+            <section className={styles.buttons}>
+                <button onClick={handleCadastro} >Cadastrar</button>
+                <button onClick={handleLogout} >Logout</button>
+            </section>
         </div>
     );
 }

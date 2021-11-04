@@ -13,7 +13,10 @@ export function Login() {
 
     async function handleLogin (e){
         e.preventDefault();
-        
+
+        if (!email) return;
+        if (!password) return;
+
         await axios.get(`http://localhost:4000/users?email=${email}`)
             .then( (res) => {
                 const user = res.data[0];
@@ -58,8 +61,10 @@ export function Login() {
                 </section>
             </form>
 
-            <button onClick={handleLogin} >Fazer login</button><button onClick={handleDirectCadastro} >Cadastre-se</button>
-            
+            <section className={styles.submitBtn}>
+                <button onClick={handleLogin} >Fazer login</button>
+                <button onClick={handleDirectCadastro} >Cadastre-se</button>
+            </section>
         </div>
     );
 }
