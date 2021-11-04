@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import styles from "./styles.module.scss"
 import axios from 'axios';
 import { getUserPlaylistsByNickname } from "../../service/users";
 
 export function Home(props) {
-  const user = JSON.parse(localStorage.getItem('@db/nickname')) //Mudei para json parse 
-
+   //Mudei para json parse 
+   const history = useHistory()
   const [totalAlbums, setTotalAlbums] = useState([]);
+  const [user, setUser] = useState("")
 
   useEffect(async () => {
+    const user = JSON.parse(localStorage.getItem('@db/nickname'))
+    if(user == null){
+      history.push('/')
+      return
+      
+    }else{
+      setUser(user)
+    }
     setTotalAlbums(await getUserPlaylistsByNickname(user.nickname))
   },[] )
 
