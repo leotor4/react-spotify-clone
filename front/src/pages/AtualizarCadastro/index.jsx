@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-
-import styles from './styles.module.scss';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import { useEffect } from 'react';
+import styles from './styles.module.scss';
+
 
 export function AtualizarCadastro() {
 
@@ -28,7 +27,7 @@ export function AtualizarCadastro() {
 
         }
 
-        await axios.put(`http://localhost:4000/users/${id}`, newUser)
+        await axios.put(`${process.env.REACT_APP_BASE_URL}/users/${id}`, newUser)
             .then((res) => {
                 localStorage.clear()
                 history.push('/')

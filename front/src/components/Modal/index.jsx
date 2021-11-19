@@ -7,12 +7,12 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Song from "../../components/Song/index";
 
-export function AlertDialog(props) {
+export function AlertDialog({ addedSongs, song, onPress }) {
   const [open, setOpen] = React.useState(false);
   const [showRemoveButton, setShowRemoveButton] = React.useState(false)
 
   const handleClickOpen = () => {
-      if(props.addedSongs.includes(props.song.nome))
+      if(addedSongs.includes(song.nome))
       setShowRemoveButton(true)
     setOpen(true);
   };
@@ -24,7 +24,7 @@ export function AlertDialog(props) {
   return (
     <>
       <h5 onClick={handleClickOpen}>
-        {props.song.nome}
+        {song.nome}
       </h5>
       <Dialog
         open={open}
@@ -37,17 +37,18 @@ export function AlertDialog(props) {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            <Song key={props.song.id} nome={props.song.nome} autor={props.song.autor} arquivo={"/" + props.song.arquivo}/>
+            <Song key={song.id} nome={song.nome} autor={song.autor} arquivo={"/" + song.arquivo}/>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancelar</Button>
           { showRemoveButton ? <Button onClick={handleClose}>Remover</Button> : null }
-          <Button value={props.song.nome} onClick={handleClose} autoFocus>
+          <Button value={song.nome} onClick={handleClose} autoFocus>
             Adicionar
           </Button>
         </DialogActions>
       </Dialog>
+        <button onClick={onPress} >CLIQUE PARA TESTAR</button>
     </>
   );
 }

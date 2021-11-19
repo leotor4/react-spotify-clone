@@ -102,6 +102,10 @@ export function CreatePlaylist() {
       setPlaylistName(event.target.value)
     }
 
+    const handleOnPress = () => {
+        alert("ola");
+    }
+
   return (
     <div className={styles.container}>  
       <form>
@@ -115,7 +119,7 @@ export function CreatePlaylist() {
         <ul>
          {searchResults.map(item => (
           <li style={{margin: 0}} onClick={handleAddSong}>
-            <AlertDialog addedSongs={addedSongs} contentStyle={{ margin: 0, padding: 0 }} song={item}/>
+            <AlertDialog onPress={handleOnPress} addedSongs={addedSongs} contentStyle={{ margin: 0, padding: 0 }} song={item}/>
           </li>
           
         ))}

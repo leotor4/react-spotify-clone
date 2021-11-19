@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-
-import styles from './styles.module.scss';
 import axios from 'axios';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { Cadastro } from '../Cadastro';
+import styles from './styles.module.scss';
+
 
 export function Login() {
     const [email, setEmail] = useState('');
@@ -17,7 +16,7 @@ export function Login() {
         if (!email) return;
         if (!password) return;
 
-        await axios.get(`http://localhost:4000/users?email=${email}`)
+        await axios.get(`${process.env.REACT_APP_BASE_URL}/users?email=${email}`)
             .then( (res) => {
                 const user = res.data[0];
                 

@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-
-import styles from './styles.module.scss';
 import axios from 'axios';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import styles from './styles.module.scss';
+
 
 export function Cadastro() {
     const [nickname, setNickname] = useState('');
@@ -14,7 +14,7 @@ export function Cadastro() {
     async function handleCadastro (e){
         e.preventDefault();
         
-        await axios.post(`http://localhost:4000/users`,
+        await axios.post(`${process.env.REACT_APP_BASE_URL}/users`,
             
         {
             nickname: nickname,
