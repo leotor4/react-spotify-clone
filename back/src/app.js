@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -104,10 +104,7 @@ app.put('/users', (req, res) => {
     return res.json(updatedUser).sendStatus(200);
 });
 
-app.get('/songs', (req, res) => {});
-
-app.post('/playlists/:playlistId/songs', (req, res) => {
-    const id = req.params.playlistId;
+app.post('/songs', (req, res) => {
     const { song } = req.body;
 
     playlist.push(song);
@@ -115,8 +112,7 @@ app.post('/playlists/:playlistId/songs', (req, res) => {
     return res.json(playlist).sendStatus(201);
 });
 
-app.delete('/playlists/:playlistId/songs', (req, res) => {
-    const id = req.params.playlistId;
+app.delete('/songs', (req, res) => {
     const { song } = req.body;
 
     const newPlaylist = playlist.filter((e) => e.id !== song.id);
@@ -125,6 +121,8 @@ app.delete('/playlists/:playlistId/songs', (req, res) => {
 
     return res.json(newPlaylist).sendStatus(200);
 });
+
+app.get('/songs', (req, res) => {});
 
 app.listen(port, () => {
     console.log(`Express listening on port ${port}`);
