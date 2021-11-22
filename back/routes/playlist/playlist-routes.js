@@ -1,21 +1,21 @@
-var express = require('express');
-var router = express.Router();
-var userController = require('../../controller/user-controller')
+let express = require('express');
+let router = express.Router();
+let playlistController = require('../../controller/playlist-controller')
 
-//Retorna todos os usuários cadastrados.
-router.get("/", userController.getAllUSers)
+//Retorna todos os playlists cadastrados.
+router.get("/", playlistController.getAllPlaylists)
 
-//Retorna um usuário cadastrado por ID.
-router.get("/:id", userController.getUserById)
+//Retorna um playlist cadastrado por ID.
+router.get("/:id", playlistController.getPlaylistById)
 
-//Cadastra um novo usuário
-router.post("/", userController.newUser)
+//Cadastra uma novo playlist
+router.post("/", playlistController.newPlaylist)
 
-//Atualiza um usuário cadastrador por ID
-router.put("/:id", userController.updateUserById)
+//Atualiza um playlist cadastrador por ID
+router.put("/:id", playlistController.updatePlyalistById)
 
-//Deleta um usuário existente por ID
-router.delete("/:id", userController.deleteUserById)
+//Deleta um playlist existente por ID
+router.delete("/:id", playlistController.deletePlaylistById)
 
 module.exports = router
 

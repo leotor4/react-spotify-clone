@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
-var userController = require('../../controller/user-controller')
+let express = require('express');
+let router = express.Router();
+let userController = require('../../controller/user-controller')
+let playlistController = require('../../controller/playlist-controller')
+
 
 //Retorna todos os usuários cadastrados.
 router.get("/", userController.getAllUSers)
+
+//Retorna as playlists de um usuário por ID
+router.get("/:id/playlists", playlistController.getPlaylistByUserId)
 
 //Retorna um usuário cadastrado por ID.
 router.get("/:id", userController.getUserById)
