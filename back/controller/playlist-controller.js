@@ -4,7 +4,7 @@ const dbService = require("../service/db-service")
 
 //Retorna todo os usuários cadastrados
 const getAllPlaylists = (req, res, next) => {
-    res.json(dbFile.playlists)
+    res.status(200).json(dbFile.playlists)
 }
 
 //Retorna uma playlist cadastrada por ID
@@ -36,9 +36,9 @@ const updatePlyalistById = (req, res, next) => {
         for(let playlist of dbFile.playlists){
             if(playlist.id === parseInt(req.params.id)){
                 updateIndex = dbFile.playlists.indexOf(playlist)
-                dbFile.playlist[updateIndex] = req.body
+                dbFile.playlists[updateIndex] = {id: dbFile.playlists[updateIndex].id, ...req.body}
                 dbService.updateDbFileArchive(JSON.stringify(dbFile))
-                res.status(204).json({message: "Usuário atualizado com sucesso!"})
+                res.status(204).json({message: "Playlist atualizado com sucesso!"})
                 break
             }
         }
@@ -63,8 +63,23 @@ const deletePlaylistById = (req, res, next) => {
 
 //Cria uma playlist
 const newPlaylist = (req, res, next) => {
-    res.json({message: "POST new playlist"});
+    if(_validateNewPlaylistReqBody(req.body)){
+        lastPlaylistId = dbFile.playlists.at(-1).id + 1
+        dbFile.playlists.push({id: lastPlaylistId, ...req.body})
+        dbService.updateDbFileArchive(JSON.stringify(dbFile))
+        res.status(201).json({message: "Playlist criada com sucesso!"})
+    }else{
+        res.status(400).json({message: "Preencha os campos obrigatórios corretamente."});
+    }
 };
+
+
+const _validateNewPlaylistReqBody = (reqBody) => {
+    if(!reqBody.name || !reqBody.userId || !reqBody.capa || !reqBody.songs){
+        return false
+    }
+    return true
+}
 
 module.exports = {newPlaylist, deletePlaylistById, updatePlyalistById, getPlaylistById, 
     getPlaylistByUserId, getAllPlaylists}

@@ -34,7 +34,8 @@ const updateUserById = (req, res, next) => {
         for(let user of dbFile.users){
             if(user.id === parseInt(req.params.id)){
                 req.body.id = user.id
-                dbFile.users[user.id-1] = req.body
+                userIndex = dbFile.users.indexOf(user)
+                dbFile.users[userIndex] = req.body
                 dbService.updateDbFileArchive(JSON.stringify(dbFile))
                 res.status(204).json({message: "Usuário atualizado com sucesso!"})
                 break
@@ -74,7 +75,7 @@ const newUser = (req, res, next) => {
         dbService.updateDbFileArchive(JSON.stringify(dbContent))
         res.status(201).json({message: "Usuário criado com sucesso!"})
     }else{
-        res.json({message: "POST new tea"});
+        res.status(400).json({message: "Preencha os campos obrigatórios corretamente."});
     }
 };
 
